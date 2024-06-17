@@ -27,10 +27,9 @@ const Contact = () => {
         "service_yyqh2ud",
         "template_t1eaane",
         {
-          fName: form.fName,
-          lName: form.lName,
+          from_name: `${form.fName} ${form.lName}`,
           to_name: "Mohit Mokal Mediation",
-          email: form.email,
+          from_email: form.email,
           linkedin: form.linkedin,
           to_email: "info@mohitmokalmediation.com",
           message: form.message,
@@ -60,7 +59,7 @@ const Contact = () => {
 
   return (
     <div className="bg-[#BAE0EB] bg-opacity-25 flex flex-col justify-center items-center">
-      <div className="px-[28px] py-[53px] md:p-[73px] flex flex-col gap-[12px] justify-center items-center">
+      <div className="px-7 py-14 md:p-20 flex flex-col gap-3 justify-center items-center">
         <h1 className="font-jakarta font-semibold text-[25px] md:text-[54px]">
           Contact Us
         </h1>
@@ -83,8 +82,8 @@ const Contact = () => {
               </label>
               <input
                 type="text"
-                name="fname"
-                value={form.fname}
+                name="fName"
+                value={form.fName}
                 onChange={handleChange}
                 placeholder="First name"
                 className="border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -97,8 +96,8 @@ const Contact = () => {
               </label>
               <input
                 type="text"
-                name="lname"
-                value={form.lname}
+                name="lName"
+                value={form.lName}
                 onChange={handleChange}
                 placeholder="Last name"
                 className="border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -119,7 +118,7 @@ const Contact = () => {
                 placeholder="Email address"
                 className="border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 required
-                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
               />
             </div>
             <div className="flex flex-col md:w-1/2">

@@ -7,14 +7,14 @@ const FeaturedServicesContainer = ({ children }) => {
       <div className="relative flex justify-center">
         <span className="font-semibold text-lg">Featured Services</span>
       </div>
-      <div className="mt-4 flex flex-wrap justify-center">{children}</div>
+      <div className="mt-4 flex flex-wrap text-center justify-center">{children}</div>
     </div>
   );
 };
 
 const Hero = () => {
   return (
-    <section className="font-inter relative w-full px-[10px] flex flex-col justify-center items-center pt-32 md:pt-64 pb-16">
+    <section className="font-inter relative w-full px-3 flex flex-col justify-center items-center pt-32 md:pt-64 pb-16">
       <div className="text-[#1754AC] text-lg md:text-xl font-bold text-center">
         Dispute Resolution Professional
       </div>
@@ -57,7 +57,7 @@ const Hero = () => {
         Used and loved by people at brilliant companies
       </h1>
 
-      <div className="px-[20px] mt-8 flex flex-wrap justify-center items-center gap-8 md:space-x-16">
+      <div className="px-5 mt-8 flex flex-wrap justify-center items-center gap-8 md:space-x-16">
         {companies.map((company, index) => (
           <div key={index} className="w-20 md:w-24">
             <img

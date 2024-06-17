@@ -1,10 +1,93 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { linkImage, myVideos, otherVideos } from "../assets/index";
 import { books, papers } from "../constants";
 import { styles } from "../styles";
 import Footer from "./Footer";
 
 import { article1, article2 } from "../assets";
+
+const BlogSection = () => {
+  const [blogPosts, setBlogPosts] = useState([]);
+
+  useEffect(() => {
+    const fetchBlogPosts = async () => {
+      try {
+        const response = await axios.get(
+          "https://www.googleapis.com/blogger/v3/blogs/8530927588085798151/posts",
+          {
+            params: {
+              key: "AIzaSyDwfx1noEatm5ssUdO8-vF6b9hMhVZ0jPU",
+              maxResults: 4,
+            },
+          }
+        );
+
+        setBlogPosts(response.data.items);
+      } catch (error) {
+        console.error("Error fetching blog posts:", error);
+      }
+    };
+
+    fetchBlogPosts();
+  }, []);
+
+  const extractDescription = (content) => {
+    const description =
+      content
+        .replace(/&nbsp;/g, " ")
+        .replace(/<\/?[^>]+(>|$)/g, " ")
+        .replace(/\n/g, " ")
+        .trim()
+        .slice(0, 300) + "...";
+    return description;
+  };
+
+  return (
+    <div className="pt-[40px]">
+      <h2 className="font-jakarta font-semibold text-[20px] md:text-[36px] text-[#190041]">
+        Blogs
+      </h2>
+      {blogPosts.map((post) => (
+        <div
+          key={post.id}
+          className="py-10 flex flex-col md:flex-row  md:justify-between"
+        >
+          <div className="font-inter text-[#B2B1B8]">
+            {new Date(post.published).toLocaleDateString("default", {
+              month: "long",
+              day: "numeric",
+              year: "numeric",
+            })}
+          </div>
+          <div className="md:w-3/5">
+            <h2 className="font-jakarta text-[20px] md:text-[32px] font-semibold">
+              {post.title}
+            </h2>
+            <p className="font-inter text-[12px] md:text-[18px] text-[#706D79] y">
+              {extractDescription(post.content)}
+            </p>
+            <div className="py-[25px]">
+              <a href={post.url} target="_blank" rel="noopener noreferrer">
+                <button className="bg-[#1754AC] hover:bg-blue-700 text-inter font-medium text-white py-2 px-4 rounded w-[134px]">
+                  Read More
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      ))}
+
+      <div className="bg-[#1754AC] rounded-lg cursor-pointer mt-10">
+        <a href="https://mohitmokalmediation.blogspot.com/">
+          <div className="px-6 py-3 text-center text-white text-base md:text-lg font-inter">
+            Read Other Posts
+          </div>
+        </a>
+      </div>
+    </div>
+  );
+};
 
 const BookCard = ({ book }) => (
   <div className="flex flex-col w-[370px] md:w-[560px]">
@@ -215,59 +298,7 @@ const Publications = () => {
           </div>
         </div>
 
-        <div className="py-[40px] w-full justify-center items-center">
-          <h2 className="font-jakarta font-semibold text-[20px] md:text-[36px] text-[#190041]">
-            Blogs
-          </h2>
-          <div className="mt-[24px]">
-            <div className="md:pt-[64px] pt-[25px] flex flex-col md:flex-row space-y-[16px] md:justify-between">
-              <div className="font-inter text-[#B2B1B8]">Date</div>
-              <div className="w-[370px] md:w-3/5">
-                <img
-                  src={"thumbnail"}
-                  alt="Thumbnail"
-                  className="w-[370px] md:w-[680px] rounded-lg"
-                />
-                <h2 className="py-[16px] md:py-[24px] font-jakarta text-[20px] md:text-[32px] font-semibold">
-                  Title
-                </h2>
-                <p className="font-inter text-[12px] md:text-[18px] text-[#706D79] text-justify">
-                  Description
-                </p>
-                <div className="py-[25px]">
-                  <a href="linkToBlogPost">
-                    <button className="bg-[#1754AC] hover:bg-blue-700 text-inter font-medium text-white py-2 px-4 rounded w-[134px]">
-                      Read More
-                    </button>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="md:pt-[64px] pt-[25px] flex flex-col md:flex-row space-y-[16px] md:justify-between">
-              <div className="font-inter text-[#B2B1B8]">Date</div>
-              <div className="w-[370px] md:w-3/5">
-                <img
-                  src={"thumbnail"}
-                  alt="Thumbnail"
-                  className="w-[370px] md:w-[680px] rounded-lg"
-                />
-                <h2 className="py-[16px] md:py-[24px] font-jakarta text-[20px] md:text-[32px] font-semibold">
-                  Title
-                </h2>
-                <p className="font-inter text-[12px] md:text-[18px] text-[#706D79] text-justify">
-                  Description
-                </p>
-                <div className="py-[25px]">
-                  <a href="linkToBlogPost">
-                    <button className="bg-[#1754AC] hover:bg-blue-700 text-inter font-medium text-white py-2 px-4 rounded w-[134px]">
-                      Read More
-                    </button>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <BlogSection />
       </div>
       <Footer />
     </div>
