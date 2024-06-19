@@ -8,45 +8,45 @@ import { SectionWrapper } from "../hoc";
 const Services = () => {
   return (
     <div className={`${styles.sectionPadding} font-jakarta`}>
-      <h1 className={"font-semibold text-[25px] md:text-[54px]"}>
+      <h1 className={"font-semibold text-2xl md:text-6xl"}>
         Our Services
       </h1>
-      <p className="text-[10px] md:text-[18px]">
+      <p className="text-xs md:text-lg">
         Our range of Services and solutions
       </p>
-      <div className="border border-[#1754AC] opacity-50 my-[9px] md:my-[24px]"></div>
+      <div className="border border-[#1754AC] opacity-50 my-2 md:my-6"></div>
 
       {services.map((service, index) => (
-        <div key={index} className="md:flex md:items-start md:mt-[60px]">
-          <div className="md:mr-auto my-[24px]">
-            <span className="text-[19px] md:text-[40px] text-[#1754AC] font-semibold">{`0${
+        <div key={index} className="md:flex md:items-start md:mt-16">
+          <div className="md:mr-auto my-6">
+            <span className="text-xl md:text-4xl text-[#1754AC] font-semibold">{`0${
               index + 1
             }`}</span>
           </div>
           <div className="md:w-3/5">
             <img
-              className="w-[680px] h-[200px] object-cover rounded-lg"
+              className="w-full object-cover rounded-lg"
               src={service.thumbnail}
               alt={service.title}
             />
-            <h2 className="text-[20px] md:text-[32px] font-semibold my-[12px] md:mt-[16px]">
+            <h2 className="text-xl md:text-3xl font-semibold my-3 md:mt-4">
               {service.title}
             </h2>
             {index === 0 ? (
-              <ul className="list-disc ml-[28px] md:ml-[24px] my-[11px] md:my-[20px]">
+              <ul className="list-disc ml-7 md:ml-6 my-3 md:my-5">
                 {service.points.map((point, index) => (
                   <li
                     key={index}
-                    className="md:mt-[4px] font-medium text-[12px] md:text-[18px] text-[#706D79]"
+                    className="md:mt-1 font-medium text-xs md:text-lg text-[#706D79]"
                   >
                     {point}
                   </li>
                 ))}
               </ul>
             ) : (
-              <div className="md:mt-[4px] font-medium text-[12px] md:text-[18px] text-[#706D79]">
+              <div className="md:mt-1 font-medium text-xs md:text-lg text-[#706D79]">
                 {service.points.map((point, index) => (
-                  <p key={index} className="my-[24px] md:my-[24px]">
+                  <p key={index} className="my-6 text-justify">
                     {point}
                   </p>
                 ))}
@@ -55,13 +55,13 @@ const Services = () => {
             {(index === 0 || index === 2) &&
               service.links &&
               service.links.length > 0 && (
-                <div className="md:mt-[16px] font-bold text-[12px] md:text-[18px]">
+                <div className="font-bold text-xs md:text-lg">
                   Case Studies:
                   <div className="flex flex-wrap">
                     {service.links.map((link, index) => (
                       <div
                         key={index}
-                        className="md:flex md:items-center mr-[9px] md:mr-[24px] mt-[8px]"
+                        className="md:flex md:items-center mr-2 md:mr-6 mt-2"
                       >
                         <a
                           href={link.link}
@@ -72,7 +72,7 @@ const Services = () => {
                             <img
                               src={downloadImage}
                               alt="Download"
-                              className="mr-[8px] w-[40px] md:w-[60px]"
+                              className="mr-2 w-10 md:w-14"
                             />
                             <span class="group-hover:block hidden absolute bg-[#1754AC] text-white font-inter text-sm p-2 rounded-md">
                               {link.title}
@@ -87,13 +87,13 @@ const Services = () => {
             {(index === 1 || index === 3) &&
               service.links &&
               service.links.length > 0 && (
-                <div className="md:mt-[16px] font-bold text-[12px] md:text-[18px]">
+                <div className="font-bold text-xs md:text-lg">
                   Links:
                   <div className="flex flex-wrap">
                     {service.links.map((link, index) => (
                       <div
                         key={index}
-                        className="md:flex md:items-center mr-[9px] md:mr-[24px] mt-[8px]"
+                        className="md:flex md:items-center mr-2 md:mr-6 mt-2"
                       >
                         <a
                           href={link.link}
@@ -105,7 +105,7 @@ const Services = () => {
                             <img
                               src={linkImage}
                               alt="Link"
-                              className="mr-[8px] w-[40px] md:w-[60px]"
+                              className="mr-2 w-10 md:w-14"
                             />
                             <span class="group-hover:block hidden absolute bg-[#1754AC] text-white font-inter text-sm p-2 rounded-md">
                               {link.title}

@@ -59,25 +59,25 @@ const Contact = () => {
 
   return (
     <div className="bg-[#BAE0EB] bg-opacity-25 flex flex-col justify-center items-center">
-      <div className="px-7 py-14 md:p-20 flex flex-col gap-3 justify-center items-center">
-        <h1 className="font-jakarta font-semibold text-[25px] md:text-[54px]">
+      <div className="px-7 py-14 md:p-20 flex flex-col gap-3 justify-center items-center max-w-screen-sm">
+        <h1 className="font-jakarta font-semibold text-2xl md:text-5xl">
           Contact Us
         </h1>
-        <p className="font-jakarta text-center w-[238px] md:w-[450px] text-[#706D79] text-[14px] md:text-[18px]">
+        <p className="font-jakarta text-center text-[#706D79] text-sm md:text-lg">
           Fill out the form below and we will reach out to you as soon as
           possible..
         </p>
       </div>
 
-      <div>
+      <div className="w-full md:px-44 px-12">
         <form
           ref={formRef}
           onSubmit={handleSubmit}
-          className="flex flex-col md:w-[1136px] md:p-8"
+          className="flex flex-col md:p-8"
         >
           <div className="flex flex-col md:flex-row gap-4 mb-4">
             <div className="flex flex-col md:w-1/2">
-              <label className="font-jakarta text-[15px] md:text-[20px] text-[#2E2E2E] mb-2">
+              <label className="font-jakarta text-base md:text-xl text-[#2E2E2E] mb-2">
                 First name
               </label>
               <input
@@ -91,7 +91,7 @@ const Contact = () => {
               />
             </div>
             <div className="flex flex-col md:w-1/2">
-              <label className="font-jakarta text-[15px] md:text-[20px] text-[#2E2E2E] mb-2">
+              <label className="font-jakarta text-base md:text-xl text-[#2E2E2E] mb-2">
                 Last name
               </label>
               <input
@@ -107,7 +107,7 @@ const Contact = () => {
           </div>
           <div className="flex flex-col md:flex-row gap-4 mb-4">
             <div className="flex flex-col md:w-1/2">
-              <label className="font-jakarta text-[15px] md:text-[20px] text-[#2E2E2E] mb-2">
+              <label className="font-jakarta text-base md:text-xl text-[#2E2E2E] mb-2">
                 Email address
               </label>
               <input
@@ -122,7 +122,7 @@ const Contact = () => {
               />
             </div>
             <div className="flex flex-col md:w-1/2">
-              <label className="font-jakarta text-[15px] md:text-[20px] text-[#2E2E2E] mb-2">
+              <label className="font-jakarta text-base md:text-xl text-[#2E2E2E] mb-2">
                 LinkedIn
               </label>
               <input
@@ -136,7 +136,7 @@ const Contact = () => {
             </div>
           </div>
           <div className="flex flex-col mb-4">
-            <label className="font-jakarta text-[15px] md:text-[20px] text-[#2E2E2E] mb-2">
+            <label className="font-jakarta text-base md:text-xl text-[#2E2E2E] mb-2">
               Tell us your query
             </label>
             <textarea
@@ -150,10 +150,10 @@ const Contact = () => {
             />
           </div>
 
-          <div className="flex justify-center my-[40px]">
+          <div className="flex justify-center my-10">
             <button
               type="submit"
-              className="bg-[#1754AC] hover:bg-blue-700 text-inter font-medium text-white py-2 px-4 rounded w-[290px]"
+              className="bg-[#1754AC] hover:bg-blue-700 text-inter font-medium text-white py-2 px-20 rounded w-"
             >
               {loading ? "Submitting..." : "Submit"}
             </button>

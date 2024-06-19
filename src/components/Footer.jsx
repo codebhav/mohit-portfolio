@@ -7,7 +7,7 @@ const Footer = () => {
   const isMainPage = location.pathname === "/";
 
   return (
-    <div className="bg-[#1754AC] px-[28px] py-[59px] md:px-[112px] md:py-[75px]">
+    <div className="bg-[#1754AC] px-7 py-14 md:px-28 md:py-20">
       <div className="flex flex-col md:flex-row md:justify-between md:items-center">
         <Link
           to="/"
@@ -17,7 +17,7 @@ const Footer = () => {
             window.scrollTo(0, 0);
           }}
         >
-          <h1 className="font-jakarta text-[26px] text-white">
+          <h1 className="font-jakarta text-2xl text-white">
             Mohit Mokal Mediation
           </h1>
           <p className="font-inter text-[#DADADA]">
@@ -28,9 +28,6 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row md:space-x-16">
           <div className="flex flex-col mb-4 md:mb-0">
             <p className="font-inter text-white mb-2">Book a Call</p>
-            <Link to="/publications" className="font-inter text-[#DADADA]" onClick={ () => {window.scrollTo(0, 0);}}>
-              Publications
-            </Link>
           </div>
           <div className="flex flex-col mb-4 md:mb-0">
             <p className="font-inter text-white mb-2">
@@ -49,13 +46,16 @@ const Footer = () => {
             </p>
           </div>
           <div className="flex flex-col">
-          <p className="font-inter text-white mb-2">
+            <p className="font-inter text-white mb-2">
               {isMainPage ? (
                 <a href="#contact">Contact Us</a>
               ) : (
                 <Link to="/#contact">Contact Us</Link>
               )}
             </p>
+            <Link to="/publications" className="font-inter text-[#DADADA]" onClick={ () => {window.scrollTo(0, 0);}}>
+              Publications
+            </Link>
           </div>
         </div>
       </div>
