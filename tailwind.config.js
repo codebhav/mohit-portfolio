@@ -6,7 +6,7 @@ module.exports = {
     extend: {
       animation: {
         "loop-scroll": "loop-scroll 20s linear infinite",
-        "loop-scroll-reverse": "loop-scroll 120s reverse linear infinite"
+        "loop-scroll-reverse": "loop-scroll 20s reverse linear infinite"
       },
       keyframes: {
         "loop-scroll": {

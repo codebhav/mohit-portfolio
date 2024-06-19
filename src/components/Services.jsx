@@ -74,7 +74,7 @@ const Services = () => {
                               alt="Download"
                               className="mr-2 w-10 md:w-14"
                             />
-                            <span class="group-hover:block hidden absolute bg-[#1754AC] text-white font-inter text-sm p-2 rounded-md">
+                            <span className="group-hover:block hidden absolute bg-[#1754AC] text-white font-inter text-sm p-2 rounded-md">
                               {link.title}
                             </span>
                           </div>
@@ -107,7 +107,7 @@ const Services = () => {
                               alt="Link"
                               className="mr-2 w-10 md:w-14"
                             />
-                            <span class="group-hover:block hidden absolute bg-[#1754AC] text-white font-inter text-sm p-2 rounded-md">
+                            <span className="group-hover:block hidden absolute bg-[#1754AC] text-white font-inter text-sm p-2 rounded-md">
                               {link.title}
                             </span>
                           </div>

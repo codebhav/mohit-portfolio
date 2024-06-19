@@ -27,7 +27,9 @@ const Footer = () => {
 
         <div className="flex flex-col md:flex-row md:space-x-16">
           <div className="flex flex-col mb-4 md:mb-0">
-            <p className="font-inter text-white mb-2">Book a Call</p>
+            <a href="https://calendly.com/mohitmokalmediation">
+              <p className="font-inter text-white mb-2">Book a Call</p>
+            </a>
           </div>
           <div className="flex flex-col mb-4 md:mb-0">
             <p className="font-inter text-white mb-2">
@@ -53,7 +55,13 @@ const Footer = () => {
                 <Link to="/#contact">Contact Us</Link>
               )}
             </p>
-            <Link to="/publications" className="font-inter text-[#DADADA]" onClick={ () => {window.scrollTo(0, 0);}}>
+            <Link
+              to="/publications"
+              className="font-inter text-[#DADADA]"
+              onClick={() => {
+                window.scrollTo(0, 0);
+              }}
+            >
               Publications
             </Link>
           </div>
