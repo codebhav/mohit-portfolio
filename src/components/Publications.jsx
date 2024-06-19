@@ -247,7 +247,7 @@ const Publications = () => {
                   his mark on the field only continues to grow.
                 </p>
                 <div className="py-6">
-                  <a href="https://notes.agami.in/p/from-conversations-to-collaborations">
+                  <a href="https://mediatorsbeyondborders.org/the-lawyer-who-never-goes-to-court-member-spotlight-mohit-mokal/">
                     <button className="bg-[#1754AC] hover:bg-blue-700 text-inter font-medium text-white py-2 px-10 rounded">
                       Read More
                     </button>
@@ -267,7 +267,7 @@ const Publications = () => {
                   The Residency
                 </p>
                 <div className="py-4">
-                  <a href="https://mediatorsbeyondborders.org/the-lawyer-who-never-goes-to-court-member-spotlight-mohit-mokal/">
+                  <a href="https://notes.agami.in/p/from-conversations-to-collaborations">
                     <button className="bg-[#1754AC] hover:bg-blue-700 text-inter font-medium text-white py-2 px-10">
                       Read More
                     </button>

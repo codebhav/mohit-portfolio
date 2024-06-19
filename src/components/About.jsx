@@ -172,16 +172,16 @@ const About = () => {
     target: targetRef.current, // Use targetRef.current instead of targetRef
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["4%", "-167%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-150%"]);
 
   return (
     <div>
       {isMediumOrLarger ? (
-        <section ref={targetRef.current} className="relative h-[300vh]">
+        <section ref={targetRef.current} className="relative h-[500vh]">
           <div className="sticky top-[100px] h-screen flex item-center overflow-hidden">
             <motion.div
               style={{ x }}
-              className="flex gap-4 bg-[#BAE0EB3D] bg-opacity-24 py-[200px] pl-[1000px] pr-[2000px]"
+              className="flex gap-4 bg-[#BAE0EB3D] bg-opacity-24 py-[200px] pl-[150vh] pr-[150vh]"
             >
               <Card1 />
               <Card2 />
