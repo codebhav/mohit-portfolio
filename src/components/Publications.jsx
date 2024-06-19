@@ -189,7 +189,7 @@ const Publications = () => {
             Videos - YouTube:
           </h2>
           <div className="flex flex-col md:flex-row ml-0 md:space-x-20 gap-y-10 mt-6">
-            <div className="flex flex-col gap-6 justify-center items-center w-1/2">
+            <div className="flex flex-col gap-6 justify-center items-center md:w-1/2">
               <a
                 href="https://youtube.com/playlist?list=PL_d0lgKXwPlLRNxsYZ7ECx2rt0ObsRs4A&si=wdKaQ_MwVHeXeqFP"
                 target="_blank"
@@ -202,7 +202,7 @@ const Publications = () => {
                 My Other Videos
               </p>
             </div>
-            <div className="flex flex-col gap-6 justify-center items-center w-1/2">
+            <div className="flex flex-col gap-6 justify-center items-center md:w-1/2">
               <a
                 href="https://www.youtube.com/channel/UCa2sAikt_Fe5oYprKZFUfeQ"
                 target="_blank"
