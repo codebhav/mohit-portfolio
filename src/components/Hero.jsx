@@ -7,7 +7,9 @@ const FeaturedServicesContainer = ({ children }) => {
       <div className="relative flex justify-center">
         <span className="font-semibold text-lg">Featured Services</span>
       </div>
-      <div className="mt-4 flex flex-wrap text-center justify-center">{children}</div>
+      <div className="mt-4 flex flex-wrap text-center justify-center">
+        {children}
+      </div>
     </div>
   );
 };
@@ -21,13 +23,12 @@ const Hero = () => {
       <div className="p-4 text-black text-4xl md:text-6xl font-extrabold font-jakarta text-center">
         Mohit Mokal
       </div>
-      <div className="pb-4 flex flex-col text-center text-[#706D79] text-base md:text-lg">
+      <div className="pb-4 flex flex-col text-center text-[#706D79] text-base md:text-lg md:w-1/4">
         <span>
           <span className="font-semibold">Dispute Resolution Professional</span>{" "}
-          based in <span className="font-semibold">Mumbai</span>,
+          based in <span className="font-semibold">Mumbai</span>, dedicated to
+          promoting and utilizing Mediation and Online Dispute Resolution (ODR).
         </span>
-        <span>dedicated to promoting and utilizing Mediation and Online</span>
-        <span>Dispute Resolution (ODR).</span>
       </div>
 
       <div className="mt-4 px-6 py-3 bg-[#1754AC] rounded-lg justify-center items-center cursor-pointer">

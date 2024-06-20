@@ -100,19 +100,19 @@ export const navLinks = [
 
 export const ftServices = [
   {
+    title: "AI-based solutions for access to justice.",
+  },
+  {
     title: "Policy Development",
   },
   {
     title: "Mediation",
   },
   {
-    title: "ODR",
-  },
-  {
     title: "Trainings",
   },
   {
-    title: "AI-based solutions for access to justice.",
+    title: "ODR",
   },
 ];
 
